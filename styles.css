@@ -6,3 +6,11 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.playerSelection {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 5rem;
+}
