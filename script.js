@@ -1,8 +1,9 @@
 // initialize score 
 let playerScore = 0;
 let computerScore = 0;
-let playerScoreEl = document.getElementById('playerScore')
-let computerScoreEl = document.getElementById('computerScore')
+let playerScoreEl = document.getElementById('playerScore');
+let computerScoreEl = document.getElementById('computerScore');
+let textResultEl = document.getElementById('textResult');
 
 
 // function to get random computer choice
@@ -20,18 +21,18 @@ function playRound(playerSelection, computerSelection) {
         (computerSelection === "Rock" && playerSelection === "paper" ||
         computerSelection === "Paper" && playerSelection === "scissors" ||
         computerSelection === "Scissors" && playerSelection === "rock") {
-            console.log(`You win! ${playerSelection[0].toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}`);
+            textResultEl.textContent = `You win! ${playerSelection[0].toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}`;
             playerScore += 1;
         }
     else if 
         (computerSelection === "Rock" && playerSelection === "scissors" ||
         computerSelection === "Paper" && playerSelection === "rock" ||
         computerSelection === "Scissors" && playerSelection === "paper") {
-            console.log(`You lose! ${computerSelection} beats ${playerSelection[0].toUpperCase() + playerSelection.slice(1)}`);
+            textResultEl.textContent = `You lose! ${computerSelection} beats ${playerSelection[0].toUpperCase() + playerSelection.slice(1)}`;
             computerScore +=1;
         }
     else {
-        console.log("Draw")
+        textResultEl.textContent = `Draw`
     }
 }
 
@@ -46,8 +47,6 @@ selectionButton.forEach(selectionButton => {
         const computerSelection = getComputerChoice();
 
         playRound(playerSelection, computerSelection);
-        console.log(playerScore);
-        console.log(computerScore);
 
         playerScoreEl.textContent = playerScore;
         computerScoreEl.textContent = computerScore;
