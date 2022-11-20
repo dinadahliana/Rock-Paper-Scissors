@@ -19,3 +19,13 @@ body {
 .playerSelection:hover{
     transform: scale(1.5);
 }
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1.3rem;
+}
