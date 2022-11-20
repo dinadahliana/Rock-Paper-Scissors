@@ -1,6 +1,9 @@
 // initialize score 
 let playerScore = 0;
 let computerScore = 0;
+let playerScoreEl = document.getElementById('playerScore')
+let computerScoreEl = document.getElementById('computerScore')
+
 
 // function to get random computer choice
 function getComputerChoice(){
@@ -32,19 +35,33 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
+// game
+const selectionButton = document.querySelectorAll('[data-selection]');
+
+selectionButton.forEach(selectionButton => {
+    selectionButton.addEventListener('click', e => {
+        const playerSelection = selectionButton.dataset.selection;
+         
+        console.log(playerSelection);
+        
+    })
+})
+
+
 // function to play 5 round game
 function game() {
     for (let i=1; i<=5; i++){
-        const playerSelection = prompt("Choose your weapon");
+        //const playerSelection = prompt;        
         const computerSelection = getComputerChoice();
-        playRound(playerSelection.toLowerCase(), computerSelection);
+        playRound(playerSelection, computerSelection);
         console.log(playerScore);
         console.log(computerScore);
     }
 
     console.log(`Finish result
-                Player score: ${playerScore}
-                Computer score: ${computerScore}`);
+    Player score: ${playerScore}
+    Computer score: ${computerScore}`);
 
     if (playerScore > computerScore) {
         console.log(`Congratulations! You win the game!`)
@@ -53,4 +70,4 @@ function game() {
     }
 }
 
-game()
+//game()
