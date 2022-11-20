@@ -42,8 +42,15 @@ const selectionButton = document.querySelectorAll('[data-selection]');
 selectionButton.forEach(selectionButton => {
     selectionButton.addEventListener('click', e => {
         const playerSelection = selectionButton.dataset.selection;
-         
-        console.log(playerSelection);
+
+        const computerSelection = getComputerChoice();
+
+        playRound(playerSelection, computerSelection);
+        console.log(playerScore);
+        console.log(computerScore);
+
+        playerScoreEl.textContent = playerScore;
+        computerScoreEl.textContent = computerScore;
         
     })
 })
@@ -52,7 +59,7 @@ selectionButton.forEach(selectionButton => {
 // function to play 5 round game
 function game() {
     for (let i=1; i<=5; i++){
-        //const playerSelection = prompt;        
+        const playerSelection = prompt;        
         const computerSelection = getComputerChoice();
         playRound(playerSelection, computerSelection);
         console.log(playerScore);
@@ -69,5 +76,3 @@ function game() {
         console.log(`Nice try!`)
     }
 }
-
-//game()
