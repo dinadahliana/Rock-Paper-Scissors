@@ -2,6 +2,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #182434;
     color: #a3afbc;
+    text-align: center;
 }
 
 .playerSelections {
@@ -30,4 +31,9 @@ body {
     align-items: center;
     margin-top: 20px;
     font-size: 1.3rem;
+}
+
+.winnerDeclare {
+    margin-top: 20px;
+
 }
