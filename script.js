@@ -34,6 +34,9 @@ function playRound(playerSelection, computerSelection) {
     else {
         textResultEl.textContent = `Draw`
     }
+
+    playerScoreEl.textContent = playerScore;
+    computerScoreEl.textContent = computerScore;
 }
 
 
@@ -47,9 +50,6 @@ selectionButton.forEach(selectionButton => {
         const computerSelection = getComputerChoice();
 
         playRound(playerSelection, computerSelection);
-
-        playerScoreEl.textContent = playerScore;
-        computerScoreEl.textContent = computerScore;
         
     })
 })
@@ -68,10 +68,12 @@ function game() {
     console.log(`Finish result
     Player score: ${playerScore}
     Computer score: ${computerScore}`);
+}
 
+function winnerDeclare() {
     if (playerScore > computerScore) {
-        console.log(`Congratulations! You win the game!`)
+        textResultEl.textContent = `Congratulations! You win the game!`
     } else {
-        console.log(`Nice try!`)
+        textResultEl.textContent = `Nice try!`
     }
 }
