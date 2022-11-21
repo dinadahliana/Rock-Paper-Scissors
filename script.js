@@ -3,7 +3,7 @@ let playerScore = 0;
 let computerScore = 0;
 let playerScoreEl = document.getElementById('playerScore');
 let computerScoreEl = document.getElementById('computerScore');
-let textResultEl = document.getElementById('textResult');
+let textResultEl = document.getElementById('winnerDeclare');
 
 
 // function to get random computer choice
