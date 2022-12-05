@@ -1,6 +1,7 @@
 // initialize score 
 let playerScore = 0;
 let computerScore = 0;
+let isLive = true;
 let playerScoreEl = document.getElementById('playerScore');
 let computerScoreEl = document.getElementById('computerScore');
 let textResultEl = document.getElementById('winnerDeclare');
@@ -37,6 +38,7 @@ function playRound(playerSelection, computerSelection) {
 
     playerScoreEl.textContent = playerScore;
     computerScoreEl.textContent = computerScore;
+    
 }
 
 
@@ -50,8 +52,12 @@ selectionButton.forEach(selectionButton => {
         const computerSelection = getComputerChoice();
 
         playRound(playerSelection, computerSelection);
+        if (playerScore === 5 || computerScore === 5) {
+            winnerDeclare();
+            isLive = false;
+        }
         
-    })
+    })    
 })
 
 
